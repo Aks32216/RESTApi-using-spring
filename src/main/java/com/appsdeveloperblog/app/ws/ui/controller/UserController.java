@@ -37,6 +37,10 @@ public class UserController {
 	@GetMapping(path="/{userId}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<UserRest> getUser(@PathVariable String userId) {
 		
+		String name=null;
+		
+		int leng=name.length();
+		
 		if(users.containsKey(userId)) {
 			return new ResponseEntity<UserRest>( users.get(userId), HttpStatus.OK);
 		} else {
